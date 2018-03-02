@@ -1,6 +1,6 @@
 module Ftap.Report (ftapReport) where
 
-import Ftap.TestRun (Test, resultOf)
+import Ftap.TestRun (TestResult, resultOf)
 
 import Prelude ((<>), ($), show)
 
@@ -9,7 +9,7 @@ import Data.Either (Either(..))
 import Data.String (joinWith)
 
 
-ftapReport :: Array Test -> String
+ftapReport :: Array TestResult -> String
 ftapReport results = 
   "1.." <> (show $ length results) <> "\n" <> (joinWith "\n" zipResultsWithInts)
   where
